@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig-jenkins', variable: 'KUBECONFIG')]) {
-                    sh 'helm upgrade app ./infra/chart'
+                    sh 'helm upgrade --install app ./infra/chart'
                 }
             }
         }
