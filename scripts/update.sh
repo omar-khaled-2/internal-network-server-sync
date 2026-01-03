@@ -12,7 +12,6 @@ LOCAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 REMOTE=$(git rev-parse origin/$LOCAL_BRANCH)
 
-
 if [ "$LOCAL" != "$REMOTE" ]; then
     echo "Local branch is not equal to remote branch. Please update your local branch."
     exit 1
