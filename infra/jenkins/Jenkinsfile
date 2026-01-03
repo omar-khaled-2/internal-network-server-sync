@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                script {
-                    docker.build('internal-backend', './services/backend')
-                }
+                sh 'docker build -t internal-backend ./services/backend'
             }
         }
     }
