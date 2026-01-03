@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Tag with the unique BUILD_NUMBER
-                sh "docker build -t internal-backend./services/backend"
+                sh "docker build -t internal-backend ./services/backend"
             }
         }
         stage('Deploy') {
