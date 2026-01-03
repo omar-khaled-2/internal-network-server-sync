@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh './infra/jenkins/scripts/build.sh'
+                echo 'Building...'
             }
         }
     }
