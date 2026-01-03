@@ -4,6 +4,7 @@ set -euo pipefail
 echo "Checking for updates..."
 
 
+git fetch origin
 
 LOCAL=$(git rev-parse HEAD)
 LOCAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
