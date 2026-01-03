@@ -3,7 +3,7 @@ backend:
   image:
     repository: internal-backend
     tag: latest
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
   containerPort: 8000
   service:
     type: ClusterIP
