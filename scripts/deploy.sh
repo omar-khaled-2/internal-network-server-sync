@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "Deploying..."
+echo "Deploying... here we go"
