@@ -17,5 +17,9 @@ REMOTE=$(git rev-parse origin/$LOCAL_BRANCH)
 if [ "$LOCAL" != "$REMOTE" ]; then
     git pull
     echo "Updated successfully"
-    $SCRIPT_DIR/deploy.sh
+else
+    echo "No updates available"
+    exit 1
 fi
+
+
