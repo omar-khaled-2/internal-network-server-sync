@@ -1,0 +1,22 @@
+backend:
+  replicaCount: 2
+  image:
+    repository: internal-backend
+    tag: latest
+    pullPolicy: Never
+  containerPort: 8000
+  service:
+    type: ClusterIP
+    port: 80
+  ingress:
+    enabled: true
+    className: "nginx"
+    hosts:
+      - host: localhost
+        paths:
+          - path: /
+            pathType: Prefix
+      - host: backend.local
+        paths:
+          - path: /
+            pathType: Prefix
