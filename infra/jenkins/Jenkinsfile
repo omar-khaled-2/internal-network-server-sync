@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building...'
+                docker build -t internal-backend $WORKSPACE/services/backend
             }
         }
     }
