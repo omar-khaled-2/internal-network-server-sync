@@ -12,14 +12,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Tag with the unique BUILD_NUMBER
-                sh "docker build -t internal-backend ./services/backend"
+                sh "docker build -t internal-backend:${BUILD_NUMBER} ./services/backend"
             }
         }
         stage('Deploy') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig-jenkins', variable: 'KUBECONFIG')]) {
                     // Tell Helm to use that specific tag
-                    sh "helm upgrade --install app ./infra/chart"
+                    sh "helm upgrade --install app ./infra/chart --set backend.image.tag=${BUILD_NUMBER}"
                 }
             }
         }
